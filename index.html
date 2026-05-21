@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VORYN ONE — The Longevity Stack, Distilled.</title>
+<meta name="description" content="NMN, Magnesium Glycinate, Vitamin D3, and Vitamin K2 — the four longevity ingredients with the most peer-reviewed evidence. Two capsules a day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0D0D0D;
+  --charcoal:#1A1A1A;
+  --amber:#C8621A;
+  --amber-light:#E8832A;
+  --white:#FFFFFF;
+  --gray:#999999;
+  --border:#2A2A2A;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+.serif{font-family:'Cormorant Garamond',serif}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.8rem 5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--black);z-index:100}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;letter-spacing:0.35em;color:var(--white);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.3s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--amber);color:var(--white);border:none;padding:0.75rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.3s}
+.nav-cta:hover{background:var(--amber-light)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;padding:0 5rem;align-items:center;gap:4rem;border-bottom:1px solid var(--border)}
+.hero-left{padding:5rem 0}
+.hero-tag{font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);margin-bottom:2rem}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-size:4.8rem;font-weight:300;line-height:1.05;margin-bottom:1.8rem}
+.hero-headline em{color:var(--amber);font-style:italic}
+.hero-sub{color:var(--gray);font-size:1rem;line-height:1.9;max-width:440px;margin-bottom:3rem}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--amber);color:var(--white);border:none;padding:1.1rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s}
+.btn-primary:hover{background:var(--amber-light)}
+.btn-secondary{background:transparent;color:var(--white);border:1px solid var(--border);padding:1.1rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s}
+.btn-secondary:hover{border-color:var(--gray)}
+.hero-right{display:flex;align-items:center;justify-content:center;height:100%}
+.bottle-wrap{position:relative;width:300px}
+.bottle-placeholder{width:300px;height:460px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--charcoal);position:relative;overflow:hidden}
+.bottle-placeholder::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:3px;background:var(--amber)}
+.bottle-placeholder::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,rgba(200,98,26,0.05))}
+.bottle-inner{text-align:center;padding:2rem}
+.b-brand{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;letter-spacing:0.35em}
+.b-product{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--amber);margin-top:0.5rem}
+.b-line{width:40px;height:1px;background:var(--amber);margin:1.5rem auto}
+.b-ingredients{font-size:0.65rem;color:var(--gray);letter-spacing:0.08em;line-height:2.2;text-transform:uppercase}
+.b-count{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--amber);margin-top:2rem}
+.b-note{position:absolute;bottom:1.2rem;font-size:0.6rem;color:var(--border);letter-spacing:0.12em;text-transform:uppercase}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}
+.stat{padding:3rem;border-right:1px solid var(--border);text-align:center}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;color:var(--amber);line-height:1}
+.stat-label{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray);margin-top:0.75rem}
+
+/* SHARED SECTION */
+section{padding:7rem 5rem;border-bottom:1px solid var(--border)}
+.section-tag{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;line-height:1.2;margin-bottom:1.2rem}
+.section-sub{color:var(--gray);max-width:580px;font-size:0.95rem;line-height:1.95}
+
+/* INGREDIENTS */
+.ingredients-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:4.5rem}
+.ingredient{background:var(--black);padding:3.5rem;transition:background 0.4s;cursor:default}
+.ingredient:hover{background:var(--charcoal)}
+.ing-num{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--amber);margin-bottom:1.8rem;letter-spacing:0.12em}
+.ing-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:0.4rem;line-height:1.2}
+.ing-abbr{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);margin-bottom:1.8rem}
+.ing-dose{font-size:0.8rem;color:var(--gray);margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid var(--border)}
+.ing-desc{color:var(--gray);font-size:0.9rem;line-height:1.95}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-top:4.5rem}
+.why-points{display:flex;flex-direction:column;gap:3rem}
+.why-point{display:flex;gap:2rem;align-items:flex-start}
+.why-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--border);flex-shrink:0;line-height:1;font-weight:300}
+.why-text h4{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem;color:var(--white);font-weight:400}
+.why-text p{color:var(--gray);font-size:0.9rem;line-height:1.95}
+.price-card{background:var(--charcoal);border:1px solid var(--border);padding:3rem;position:relative}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber)}
+.price-rows{display:flex;flex-direction:column}
+.price-row{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--border);font-size:0.88rem}
+.price-row:last-child{border-bottom:none}
+.price-row .item{color:var(--white)}
+.price-row .cost{color:var(--gray);text-decoration:line-through;font-size:0.82rem}
+.price-divider{height:1px;background:var(--amber);margin:2rem 0}
+.price-total{display:flex;justify-content:space-between;align-items:baseline}
+.price-total .label{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray)}
+.price-total .saving{font-size:0.8rem;color:var(--amber);margin-top:0.3rem}
+.price-total .amount{font-family:'Cormorant Garamond',serif;font-size:3.5rem;color:var(--amber);line-height:1}
+.price-cta{width:100%;margin-top:2rem;background:var(--amber);color:var(--white);border:none;padding:1.1rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.3s}
+.price-cta:hover{background:var(--amber-light)}
+
+/* RITUAL */
+.ritual{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:4.5rem}
+.ritual-step{background:var(--black);padding:3rem;position:relative;transition:background 0.4s}
+.ritual-step:hover{background:var(--charcoal)}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:4rem;color:var(--border);line-height:1;font-weight:300;margin-bottom:2rem}
+.ritual-step h4{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;font-weight:400}
+.ritual-step p{color:var(--gray);font-size:0.88rem;line-height:1.95}
+
+/* TRUST */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:4.5rem}
+.trust-item{background:var(--black);padding:3rem;text-align:center;transition:background 0.4s}
+.trust-item:hover{background:var(--charcoal)}
+.trust-icon{width:52px;height:52px;border:1px solid var(--amber);display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;color:var(--amber);font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;letter-spacing:0.05em}
+.trust-title{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.8rem;font-weight:400}
+.trust-sub{font-size:0.82rem;color:var(--gray);line-height:1.8}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:4.5rem}
+.review{background:var(--black);padding:3rem;transition:background 0.4s}
+.review:hover{background:var(--charcoal)}
+.review-stars{color:var(--amber);letter-spacing:0.15em;margin-bottom:1.8rem;font-size:0.85rem}
+.review-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;line-height:1.75;margin-bottom:2rem;color:var(--white)}
+.review-author{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray)}
+.review-placeholder{display:flex;align-items:center;justify-content:center;min-height:200px;color:var(--border);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase}
+
+/* EMAIL */
+.email-section{text-align:center;padding:8rem 5rem;border-bottom:1px solid var(--border)}
+.email-form{display:flex;max-width:520px;margin:3rem auto 0}
+.email-input{flex:1;background:var(--charcoal);border:1px solid var(--border);border-right:none;padding:1.1rem 1.8rem;color:var(--white);font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.3s}
+.email-input:focus{border-color:var(--amber)}
+.email-input::placeholder{color:var(--border)}
+.email-btn{background:var(--amber);color:var(--white);border:none;padding:1.1rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background 0.3s}
+.email-btn:hover{background:var(--amber-light)}
+
+/* FDA */
+.fda{padding:2.5rem 5rem;border-bottom:1px solid var(--border)}
+.fda p{font-size:0.68rem;color:var(--border);line-height:1.9;max-width:860px}
+
+/* FOOTER */
+footer{padding:3.5rem 5rem;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:0.35em}
+.footer-links{display:flex;gap:2.5rem}
+.footer-links a{color:var(--gray);text-decoration:none;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:0.72rem;color:var(--border)}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:1.5rem 2rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:3rem 2rem;min-height:auto;gap:3rem}
+  .hero-right{display:none}
+  .hero-headline{font-size:3rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  section{padding:4rem 2rem}
+  .ingredients-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr;gap:3rem}
+  .ritual{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:2rem;text-align:center;padding:3rem 2rem}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+  .email-section{padding:4rem 2rem}
+  .fda{padding:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">VORYN</a>
+  <ul class="nav-links">
+    <li><a href="science.html">Science</a></li>
+    <li><a href="regimen.html">Regimen</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="product.html">Product</a></li>
+  </ul>
+  <button class="nav-cta">Subscribe & Save</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Precision Longevity Supplement</p>
+    <h1 class="hero-headline serif">The longevity<br>stack,<br><em>distilled.</em></h1>
+    <p class="hero-sub">NMN, magnesium glycinate, vitamin D3, and vitamin K2 — the four longevity ingredients with the most peer-reviewed evidence behind them. Two capsules a day.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary">Subscribe & Save — $47.99/mo</button>
+      <button class="btn-secondary">Buy Once — $59.99</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="bottle-wrap">
+      <div class="bottle-placeholder">
+        <div class="bottle-inner">
+          <div class="b-brand serif">VORYN</div>
+          <div class="b-product">ONE</div>
+          <div class="b-line"></div>
+          <div class="b-ingredients">
+            NMN 500mg<br>
+            Magnesium Glycinate 120mg<br>
+            Vitamin D3 5,000 IU<br>
+            Vitamin K2 MK-7 100mcg
+          </div>
+          <div class="b-count serif">60 Veggie Capsules · 30 Day Supply</div>
+        </div>
+        <span class="b-note">Product image coming soon</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num serif">04</div>
+    <div class="stat-label">Research-backed molecules</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num serif">02</div>
+    <div class="stat-label">Capsules per day</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num serif">100%</div>
+    <div class="stat-label">Third party tested</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num serif">USA</div>
+    <div class="stat-label">cGMP certified manufacturing</div>
+  </div>
+</div>
+
+<!-- INGREDIENTS -->
+<section id="science">
+  <p class="section-tag">The Science</p>
+  <h2 class="section-title serif">Why these four ingredients.</h2>
+  <p class="section-sub">Every ingredient in VORYN ONE was selected on a single criterion: peer-reviewed evidence. No trends. No filler. No marketing science.</p>
+  <div class="ingredients-grid">
+    <div class="ingredient">
+      <div class="ing-num">01 —</div>
+      <div class="ing-name serif">Nicotinamide Mononucleotide</div>
+      <div class="ing-abbr">NMN</div>
+      <div class="ing-dose">500mg per serving</div>
+      <p class="ing-desc">NAD+ is the coenzyme your cells use for energy production, DNA repair, and mitochondrial function. It declines significantly with age. NMN is the most efficient precursor for restoring NAD+ to youthful levels, with clinical trials showing measurable increases in blood NAD+ within weeks.</p>
+    </div>
+    <div class="ingredient">
+      <div class="ing-num">02 —</div>
+      <div class="ing-name serif">Magnesium Glycinate</div>
+      <div class="ing-abbr">Most bioavailable form</div>
+      <div class="ing-dose">120mg elemental per serving</div>
+      <p class="ing-desc">Magnesium is required for over 300 enzymatic reactions. Glycinate is the most bioavailable form — chelated to glycine for superior absorption without the GI side effects of cheaper forms. Supports deep sleep architecture, muscle recovery, and nerve function.</p>
+    </div>
+    <div class="ingredient">
+      <div class="ing-num">03 —</div>
+      <div class="ing-name serif">Vitamin D3</div>
+      <div class="ing-abbr">Cholecalciferol</div>
+      <div class="ing-dose">5,000 IU per serving</div>
+      <p class="ing-desc">Over 40% of adults are deficient. D3 is not merely a vitamin — it functions as a hormone, regulating immune function, bone density, mood, and cardiovascular health. At 5,000 IU, this is a clinically meaningful dose, not the token amount found in most multivitamins.</p>
+    </div>
+    <div class="ingredient">
+      <div class="ing-num">04 —</div>
+      <div class="ing-name serif">Vitamin K2 MK-7</div>
+      <div class="ing-abbr">Menaquinone-7</div>
+      <div class="ing-dose">100mcg per serving</div>
+      <p class="ing-desc">K2 is the ingredient most people taking D3 are missing. It activates the proteins that direct calcium to your bones and away from arterial walls. Without K2, high-dose D3 supplementation can accelerate arterial calcification. These two must be taken together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VORYN ONE -->
+<section id="why">
+  <p class="section-tag">The Logic</p>
+  <h2 class="section-title serif">One product.<br>Zero compromise.</h2>
+  <p class="section-sub">The math is simple. The convenience is real.</p>
+  <div class="why-grid">
+    <div class="why-points">
+      <div class="why-point">
+        <div class="why-num serif">01</div>
+        <div class="why-text">
+          <h4>Replaces four bottles</h4>
+          <p>Buying quality NMN, magnesium glycinate, D3, and K2 separately costs $80–$120 per month across four products, four label checks, four reorder dates. VORYN ONE delivers all four in one bottle, one price, one daily decision.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-num serif">02</div>
+        <div class="why-text">
+          <h4>Synergistic by design</h4>
+          <p>D3 and K2 must be taken together — K2 protects your arteries when taking high-dose D3. NMN and magnesium support overlapping pathways of cellular energy and recovery. These four ingredients belong in the same formula.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-num serif">03</div>
+        <div class="why-text">
+          <h4>Consistency over complexity</h4>
+          <p>Two capsules. That is the entire protocol. Longevity is a long game and the biggest enemy of results is inconsistency. We removed every reason to skip a day.</p>
+        </div>
+      </div>
+    </div>
+    <div class="price-card">
+      <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);margin-bottom:2rem">Buying separately vs. VORYN ONE</p>
+      <div class="price-rows">
+        <div class="price-row"><span class="item">NMN 500mg (quality brand)</span><span class="cost">$45/mo</span></div>
+        <div class="price-row"><span class="item">Magnesium Glycinate</span><span class="cost">$25/mo</span></div>
+        <div class="price-row"><span class="item">Vitamin D3 5,000 IU</span><span class="cost">$18/mo</span></div>
+        <div class="price-row"><span class="item">Vitamin K2 MK-7 100mcg</span><span class="cost">$22/mo</span></div>
+      </div>
+      <div class="price-divider"></div>
+      <div class="price-total">
+        <div>
+          <div class="label">Separately</div>
+          <div class="saving">VORYN ONE saves you $62/mo</div>
+        </div>
+        <div class="amount serif">$110</div>
+      </div>
+      <button class="price-cta">Get VORYN ONE — $47.99/mo</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO TAKE -->
+<section id="ritual">
+  <p class="section-tag">The Ritual</p>
+  <h2 class="section-title serif">How to take VORYN ONE.</h2>
+  <p class="section-sub">Simple. Consistent. That is the entire protocol.</p>
+  <div class="ritual">
+    <div class="ritual-step">
+      <div class="step-num serif">01</div>
+      <h4>Take two capsules</h4>
+      <p>The full daily serving. All four ingredients at their full clinical doses. Nothing held back.</p>
+    </div>
+    <div class="ritual-step">
+      <div class="step-num serif">02</div>
+      <h4>With water</h4>
+      <p>Take with a full glass of water. D3 and K2 are fat-soluble — taking alongside a meal improves absorption.</p>
+    </div>
+    <div class="ritual-step">
+      <div class="step-num serif">03</div>
+      <h4>Morning or evening</h4>
+      <p>Timing matters less than consistency. Pick a time you'll stick to. Make it a ritual, not a chore.</p>
+    </div>
+    <div class="ritual-step">
+      <div class="step-num serif">04</div>
+      <h4>Every single day</h4>
+      <p>The benefits of this stack are cumulative. They compound over months and years. Show up daily.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section id="trust">
+  <p class="section-tag">Our Standards</p>
+  <h2 class="section-title serif">Built for people who verify.</h2>
+  <p class="section-sub">You do your research. So do we. Every claim on this page is verifiable. Every batch is tested before it ships.</p>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon serif">cGMP</div>
+      <div class="trust-title">cGMP Certified</div>
+      <div class="trust-sub">Manufactured in an FDA-registered, current Good Manufacturing Practice certified facility.</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon serif">3PT</div>
+      <div class="trust-title">Third Party Tested</div>
+      <div class="trust-sub">Every production batch independently verified for purity, potency, and contaminant-free status.</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon serif">USA</div>
+      <div class="trust-title">Made in the USA</div>
+      <div class="trust-sub">Formulated and manufactured in the United States to the highest production standards.</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon serif">30D</div>
+      <div class="trust-title">30-Day Guarantee</div>
+      <div class="trust-sub">Full refund within 30 days if you are not completely satisfied. No questions asked.</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <p class="section-tag">Early Feedback</p>
+  <h2 class="section-title serif">What people are saying.</h2>
+  <div class="reviews-grid">
+    <div class="review">
+      <div class="review-stars">★ ★ ★ ★ ★</div>
+      <p class="review-text serif">"Finally consolidated my entire supplement shelf into one product. The formulation is exactly what I have been looking for — right ingredients, right doses."</p>
+      <div class="review-author">— M.K., Age 47 · Verified Purchase</div>
+    </div>
+    <div class="review">
+      <div class="review-stars">★ ★ ★ ★ ★</div>
+      <p class="review-text serif">"I have been following longevity research for years. These are the right molecules at the right doses. Nothing more, nothing less. That is rare."</p>
+      <div class="review-author">— D.R., Age 52 · Verified Purchase</div>
+    </div>
+    <div class="review">
+      <div class="review-placeholder">More reviews coming soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<div class="email-section">
+  <p class="section-tag" style="margin-bottom:1.5rem">Stay Informed</p>
+  <h2 class="section-title serif" style="max-width:600px;margin:0 auto 1rem">Join the VORYN community.</h2>
+  <p class="section-sub" style="margin:0 auto">Science-backed longevity, delivered monthly. No noise. No hype. Just the research that matters.</p>
+  <div class="email-form">
+    <input class="email-input" type="email" placeholder="Your email address">
+    <button class="email-btn">Subscribe</button>
+  </div>
+</div>
+
+<!-- FDA DISCLAIMER -->
+<div class="fda">
+  <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo serif">VORYN</div>
+  <div class="footer-links">
+    <a href="science.html">Science</a>
+    <a href="regimen.html">Regimen</a>
+    <a href="journal.html">Journal</a>
+    <a href="product.html">Product</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+  <div class="footer-copy">© 2025 VORYN. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
