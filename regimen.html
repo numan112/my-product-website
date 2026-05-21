@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VORYN ONE — The Regimen</title>
+<meta name="description" content="How to take VORYN ONE. Morning vs evening, what to stack it with, and the lifestyle habits that compound your results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0D0D0D;
+  --charcoal:#1A1A1A;
+  --amber:#C8621A;
+  --amber-light:#E8832A;
+  --white:#FFFFFF;
+  --gray:#999999;
+  --border:#2A2A2A;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.8rem 5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--black);z-index:100}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;letter-spacing:0.35em;color:var(--white);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--amber);color:var(--white);border:none;padding:0.75rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.3s}
+.nav-cta:hover{background:var(--amber-light)}
+
+/* HERO */
+.hero{padding:8rem 5rem;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.hero-tag{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:4.5rem;font-weight:300;line-height:1.05;margin-bottom:1.5rem}
+.hero-title em{color:var(--amber);font-style:italic}
+.hero-sub{color:var(--gray);font-size:1rem;line-height:1.95;margin-bottom:2.5rem}
+.hero-rule{font-size:0.78rem;color:var(--gray);border-left:2px solid var(--amber);padding-left:1.5rem;line-height:1.9}
+.hero-right{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.hero-stat{background:var(--charcoal);padding:2rem 2.5rem;display:flex;align-items:center;gap:2rem}
+.hs-icon{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--amber);flex-shrink:0;width:3rem;text-align:center}
+.hs-text h4{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;font-weight:400}
+.hs-text p{font-size:0.82rem;color:var(--gray);line-height:1.7}
+
+/* SHARED */
+section{padding:7rem 5rem;border-bottom:1px solid var(--border)}
+.section-tag{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;line-height:1.2;margin-bottom:1.2rem}
+.section-sub{color:var(--gray);font-size:0.95rem;line-height:1.95;max-width:620px}
+
+/* DAILY RITUAL */
+.ritual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:4rem}
+.ritual-step{background:var(--black);padding:3rem;position:relative;transition:background 0.4s}
+.ritual-step:hover{background:var(--charcoal)}
+.rs-num{font-family:'Cormorant Garamond',serif;font-size:4rem;color:var(--border);line-height:1;font-weight:300;margin-bottom:1.5rem}
+.rs-title{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;font-weight:400}
+.rs-desc{color:var(--gray);font-size:0.88rem;line-height:1.95}
+
+/* TIMING */
+.timing-section{padding:7rem 5rem;border-bottom:1px solid var(--border);background:var(--charcoal)}
+.timing-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:4rem}
+.timing-card{background:var(--black);padding:3.5rem;transition:background 0.3s}
+.timing-card:hover{background:#0a0a0a}
+.timing-label{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);margin-bottom:1.2rem}
+.timing-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;margin-bottom:1.5rem}
+.timing-pros{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1.5rem}
+.timing-pro{display:flex;gap:1rem;align-items:flex-start;font-size:0.85rem;color:var(--gray)}
+.timing-pro::before{content:'✓';color:var(--amber);flex-shrink:0;font-size:0.8rem;margin-top:0.1rem}
+.timing-verdict{font-size:0.78rem;color:var(--white);border-top:1px solid var(--border);padding-top:1.5rem;margin-top:1rem;line-height:1.8}
+.timing-verdict span{color:var(--amber)}
+
+/* STACK */
+.stack-section{padding:7rem 5rem;border-bottom:1px solid var(--border)}
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:4rem}
+.stack-card{background:var(--black);padding:3rem;transition:background 0.4s}
+.stack-card:hover{background:var(--charcoal)}
+.stack-compatibility{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.2rem}
+.compat-safe{color:#4CAF50}
+.compat-caution{color:var(--amber)}
+.compat-avoid{color:#e53935}
+.stack-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:0.8rem}
+.stack-desc{color:var(--gray);font-size:0.85rem;line-height:1.9}
+.stack-note{font-size:0.75rem;color:var(--amber);margin-top:1rem;font-style:italic}
+
+/* LIFESTYLE */
+.lifestyle-section{padding:7rem 5rem;border-bottom:1px solid var(--border)}
+.lifestyle-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:4rem}
+.lifestyle-col h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.lifestyle-items{display:flex;flex-direction:column;gap:2rem}
+.lifestyle-item{display:flex;gap:1.5rem;align-items:flex-start}
+.li-num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--amber);flex-shrink:0;line-height:1.2}
+.li-text h4{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;font-weight:400}
+.li-text p{color:var(--gray);font-size:0.85rem;line-height:1.9}
+
+/* FAQ */
+.faq-section{padding:7rem 5rem;border-bottom:1px solid var(--border)}
+.faq-list{margin-top:4rem;display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.faq-item{background:var(--black);overflow:hidden}
+.faq-q{padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background 0.3s;font-size:0.92rem;font-weight:400}
+.faq-q:hover{background:var(--charcoal)}
+.faq-q .icon{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--amber);transition:transform 0.3s;flex-shrink:0;margin-left:2rem}
+.faq-a{padding:0 2.5rem 2rem;color:var(--gray);font-size:0.88rem;line-height:1.95;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .icon{transform:rotate(45deg)}
+
+/* CTA */
+.regimen-cta{padding:7rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;border-bottom:1px solid var(--border)}
+.cta-left h2{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;line-height:1.15;margin-bottom:1.5rem}
+.cta-left h2 em{color:var(--amber);font-style:italic}
+.cta-left p{color:var(--gray);font-size:0.92rem;line-height:1.95}
+.cta-right{display:flex;flex-direction:column;gap:1rem}
+.btn-primary{background:var(--amber);color:var(--white);border:none;padding:1.3rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;text-align:center;text-decoration:none;display:block}
+.btn-primary:hover{background:var(--amber-light)}
+.btn-secondary{background:transparent;color:var(--white);border:1px solid var(--border);padding:1.1rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-align:center;text-decoration:none;display:block}
+.btn-secondary:hover{border-color:var(--gray)}
+
+/* FDA */
+.fda{padding:2.5rem 5rem;border-bottom:1px solid var(--border)}
+.fda p{font-size:0.68rem;color:var(--border);line-height:1.9;max-width:860px}
+
+/* FOOTER */
+footer{padding:3.5rem 5rem;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:0.35em}
+.footer-links{display:flex;gap:2.5rem}
+.footer-links a{color:var(--gray);text-decoration:none;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:0.72rem;color:var(--border)}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:1.5rem 2rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:4rem 2rem;gap:3rem}
+  .hero-title{font-size:3rem}
+  section{padding:4rem 2rem}
+  .ritual-grid{grid-template-columns:repeat(2,1fr)}
+  .timing-section{padding:4rem 2rem}
+  .timing-grid{grid-template-columns:1fr}
+  .stack-section{padding:4rem 2rem}
+  .stack-grid{grid-template-columns:1fr}
+  .lifestyle-section{padding:4rem 2rem}
+  .lifestyle-grid{grid-template-columns:1fr}
+  .faq-section{padding:4rem 2rem}
+  .regimen-cta{grid-template-columns:1fr;padding:4rem 2rem;gap:3rem}
+  footer{flex-direction:column;gap:2rem;text-align:center;padding:3rem 2rem}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+  .fda{padding:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">VORYN</a>
+  <ul class="nav-links">
+    <li><a href="science.html">Science</a></li>
+    <li><a href="regimen.html" class="active">Regimen</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="product.html">Product</a></li>
+  </ul>
+  <button class="nav-cta">Subscribe & Save</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <p class="hero-tag">Daily Protocol</p>
+    <h1 class="hero-title">The ritual.<br><em>Simplified.</em></h1>
+    <p class="hero-sub">VORYN ONE is designed to fit into your life without friction. Two capsules. One decision. Here is everything you need to know to get the most out of it.</p>
+    <p class="hero-rule">The biggest predictor of results with any supplement is consistency. We built VORYN ONE to remove every excuse to skip a day.</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat">
+      <div class="hs-icon">2</div>
+      <div class="hs-text">
+        <h4>Capsules daily</h4>
+        <p>The entire protocol. No complex timing windows or multiple doses.</p>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-icon">∞</div>
+      <div class="hs-text">
+        <h4>Long game</h4>
+        <p>Benefits compound over months and years. Consistency matters more than timing.</p>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-icon">☀</div>
+      <div class="hs-text">
+        <h4>Morning or evening</h4>
+        <p>Both work. Pick the time you'll actually stick to and make it a habit.</p>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-icon">🍽</div>
+      <div class="hs-text">
+        <h4>With a meal</h4>
+        <p>D3 and K2 are fat-soluble. Taking with food improves absorption.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DAILY RITUAL -->
+<section>
+  <p class="section-tag">The Protocol</p>
+  <h2 class="section-title">How to take VORYN ONE.</h2>
+  <p class="section-sub">This is the complete protocol. Four steps. Nothing complicated.</p>
+  <div class="ritual-grid">
+    <div class="ritual-step">
+      <div class="rs-num">01</div>
+      <div class="rs-title">Take 2 capsules</div>
+      <p class="rs-desc">The full daily serving. All four ingredients at their complete clinical doses. Do not split the dose — take both together.</p>
+    </div>
+    <div class="ritual-step">
+      <div class="rs-num">02</div>
+      <div class="rs-title">With food</div>
+      <p class="rs-desc">D3 and K2 are fat-soluble vitamins. Taking them alongside a meal that contains dietary fat — even a small amount — meaningfully improves absorption.</p>
+    </div>
+    <div class="ritual-step">
+      <div class="rs-num">03</div>
+      <div class="rs-title">With water</div>
+      <p class="rs-desc">Take with a full glass of water. Adequate hydration supports absorption of all four ingredients and general cellular function.</p>
+    </div>
+    <div class="ritual-step">
+      <div class="rs-num">04</div>
+      <div class="rs-title">Every day</div>
+      <p class="rs-desc">Consistency over everything. The benefits of NMN, magnesium, D3, and K2 are cumulative. Missing occasional days is not catastrophic — but daily use produces the best results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMING -->
+<section class="timing-section">
+  <p class="section-tag">Timing</p>
+  <h2 class="section-title">Morning or evening?</h2>
+  <p class="section-sub">Both work. Here are the arguments for each so you can choose what fits your routine.</p>
+  <div class="timing-grid">
+    <div class="timing-card">
+      <div class="timing-label">Option A</div>
+      <h3 class="timing-title">Morning with breakfast</h3>
+      <div class="timing-pros">
+        <div class="timing-pro">NMN supports cellular energy — some users prefer to take it earlier in the day</div>
+        <div class="timing-pro">Easier to remember as part of a morning routine</div>
+        <div class="timing-pro">D3 may have mild alerting effects in sensitive individuals — morning avoids any sleep impact</div>
+        <div class="timing-pro">Sets a positive health intention to start the day</div>
+      </div>
+      <div class="timing-verdict"><span>Best for:</span> People with consistent morning routines, those sensitive to stimulating effects, anyone who finds mornings easier for habit formation.</div>
+    </div>
+    <div class="timing-card">
+      <div class="timing-label">Option B</div>
+      <h3 class="timing-title">Evening with dinner</h3>
+      <div class="timing-pros">
+        <div class="timing-pro">Magnesium glycinate supports deep sleep — evening timing may enhance this benefit</div>
+        <div class="timing-pro">Dinner typically contains more dietary fat, improving D3 and K2 absorption</div>
+        <div class="timing-pro">Easier to remember for people who skip breakfast</div>
+        <div class="timing-pro">Magnesium's muscle relaxation effect is well-suited to evening</div>
+      </div>
+      <div class="timing-verdict"><span>Best for:</span> People who skip breakfast, those specifically targeting sleep quality, anyone whose evening routine is more consistent than their morning.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO STACK WITH -->
+<section class="stack-section">
+  <p class="section-tag">Stacking Guide</p>
+  <h2 class="section-title">What works with VORYN ONE.</h2>
+  <p class="section-sub">VORYN ONE is your foundation. Here is how common supplements and habits interact with it.</p>
+  <div class="stack-grid">
+    <div class="stack-card">
+      <div class="stack-compatibility compat-safe">✓ Safe to combine</div>
+      <div class="stack-name">Omega-3 / Fish Oil</div>
+      <p class="stack-desc">No interactions. Omega-3s complement the cardiovascular benefits of D3 and K2. Taking them together with a meal improves absorption of all fat-soluble compounds.</p>
+    </div>
+    <div class="stack-card">
+      <div class="stack-compatibility compat-safe">✓ Safe to combine</div>
+      <div class="stack-name">Creatine Monohydrate</div>
+      <p class="stack-desc">No interactions. Creatine and NMN both support cellular energy through different mechanisms — ATP availability and NAD+ respectively. Compatible daily stack.</p>
+    </div>
+    <div class="stack-card">
+      <div class="stack-compatibility compat-safe">✓ Safe to combine</div>
+      <div class="stack-name">Collagen Peptides</div>
+      <p class="stack-desc">No interactions. Magnesium supports connective tissue health through enzymatic pathways that complement collagen supplementation.</p>
+    </div>
+    <div class="stack-card">
+      <div class="stack-compatibility compat-safe">✓ Safe to combine</div>
+      <div class="stack-name">Zinc</div>
+      <p class="stack-desc">No meaningful interactions at standard doses. Zinc and D3 both support immune function through complementary pathways. Take at separate times if taking high-dose zinc.</p>
+    </div>
+    <div class="stack-card">
+      <div class="stack-compatibility compat-caution">⚠ Take separately</div>
+      <div class="stack-name">Calcium Supplements</div>
+      <p class="stack-desc">VORYN ONE already supports calcium metabolism via D3 and K2. Additional calcium supplementation may not be necessary — consult your physician before adding supplemental calcium.</p>
+      <div class="stack-note">Consider whether you actually need additional calcium before supplementing.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-compatibility compat-avoid">✗ Consult physician</div>
+      <div class="stack-name">Blood thinners (Warfarin)</div>
+      <p class="stack-desc">Vitamin K2 affects clotting pathways. If you are taking warfarin or other anticoagulants, do not supplement K2 without medical supervision. K2 can alter INR levels.</p>
+      <div class="stack-note">This is a real interaction. Talk to your doctor first.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="lifestyle-section">
+  <p class="section-tag">The Full Picture</p>
+  <h2 class="section-title">Habits that compound your results.</h2>
+  <p class="section-sub">VORYN ONE addresses nutrient deficiencies and cellular energy. These lifestyle habits address everything else. Together they compound.</p>
+  <div class="lifestyle-grid">
+    <div class="lifestyle-col">
+      <h3>Amplify VORYN ONE</h3>
+      <div class="lifestyle-items">
+        <div class="lifestyle-item">
+          <div class="li-num">01</div>
+          <div class="li-text">
+            <h4>Morning sunlight exposure</h4>
+            <p>10–20 minutes of direct sunlight within an hour of waking regulates your circadian rhythm — which directly affects sleep quality, cortisol rhythm, and the effectiveness of magnesium for sleep.</p>
+          </div>
+        </div>
+        <div class="lifestyle-item">
+          <div class="li-num">02</div>
+          <div class="li-text">
+            <h4>Resistance training</h4>
+            <p>Strength training upregulates NAD+ consuming enzymes and increases the demand for NMN's precursor role. Exercise and NMN work synergistically on mitochondrial biogenesis.</p>
+          </div>
+        </div>
+        <div class="lifestyle-item">
+          <div class="li-num">03</div>
+          <div class="li-text">
+            <h4>Time-restricted eating</h4>
+            <p>Eating within an 8–10 hour window supports circadian alignment and mitochondrial efficiency — complementing the cellular energy support from NMN and magnesium.</p>
+          </div>
+        </div>
+        <div class="lifestyle-item">
+          <div class="li-num">04</div>
+          <div class="li-text">
+            <h4>Consistent sleep schedule</h4>
+            <p>Magnesium glycinate supports sleep architecture most effectively when combined with a consistent sleep-wake schedule. Irregular sleep undermines the benefits of magnesium supplementation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lifestyle-col">
+      <h3>What undermines it</h3>
+      <div class="lifestyle-items">
+        <div class="lifestyle-item">
+          <div class="li-num" style="color:var(--gray)">01</div>
+          <div class="li-text">
+            <h4>Chronic alcohol consumption</h4>
+            <p>Alcohol depletes magnesium and impairs NAD+ metabolism directly. Heavy drinking significantly reduces the effectiveness of both NMN and magnesium supplementation.</p>
+          </div>
+        </div>
+        <div class="lifestyle-item">
+          <div class="li-num" style="color:var(--gray)">02</div>
+          <div class="li-text">
+            <h4>Poor sleep hygiene</h4>
+            <p>Sleep deprivation accelerates NAD+ decline and increases oxidative stress — working against the cellular repair pathways that NMN supports. Supplementation cannot fully compensate for chronic sleep debt.</p>
+          </div>
+        </div>
+        <div class="lifestyle-item">
+          <div class="li-num" style="color:var(--gray)">03</div>
+          <div class="li-text">
+            <h4>Sedentary lifestyle</h4>
+            <p>Physical inactivity reduces mitochondrial density and efficiency. NMN supports mitochondrial function most effectively in people whose mitochondria are being regularly challenged through movement.</p>
+          </div>
+        </div>
+        <div class="lifestyle-item">
+          <div class="li-num" style="color:var(--gray)">04</div>
+          <div class="li-text">
+            <h4>Inconsistent supplementation</h4>
+            <p>The single biggest factor limiting results. D3 and K2 require consistent daily intake to maintain optimal serum levels. NMN and magnesium work cumulatively. Sporadic use produces sporadic results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <p class="section-tag">Common Questions</p>
+  <h2 class="section-title">Frequently asked.</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How long before I notice results?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-a">Different ingredients work on different timelines. Magnesium glycinate effects on sleep quality are often noticed within 1–2 weeks. D3 levels typically normalize within 4–8 weeks of consistent supplementation. NMN's effects on energy and cellular function are more subtle and cumulative — most people notice meaningful changes at 60–90 days. K2 works silently in the background on arterial and bone health — benefits are measured over years, not weeks.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can I take VORYN ONE on an empty stomach?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-a">NMN and magnesium glycinate are fine on an empty stomach. However, D3 and K2 are fat-soluble — they require dietary fat for optimal absorption. Taking VORYN ONE without any fat in your meal will reduce how much D3 and K2 you actually absorb. Even a small amount of fat (olive oil, nuts, avocado) is sufficient. We recommend taking with a meal for best results across all four ingredients.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can I take more than 2 capsules for stronger effects?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-a">We do not recommend exceeding 2 capsules daily without medical supervision. The doses in VORYN ONE are calibrated to evidence-based levels — they are not token doses. D3 at 5,000 IU is already a therapeutic dose. Taking more does not produce proportionally greater benefit and can push D3 into ranges that require monitoring of serum calcium levels. More is not better with D3 and K2.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Should I get bloodwork done before starting?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-a">It is not required, but it is a smart move if you are serious about your health. A baseline panel including 25(OH)D (vitamin D), whole blood magnesium, and a metabolic panel gives you data to track progress. Many people discover they are significantly more deficient than they expected. Testing at baseline and again at 90 days shows you exactly what is changing.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Is VORYN ONE suitable for vegetarians and vegans?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-a">Yes. VORYN ONE uses vegetable cellulose capsules. The D3 is derived from lichen (a vegan source), not lanolin. The K2 MK-7 is derived from natto fermentation. All four ingredients and all excipients are suitable for vegetarians and vegans.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can women take VORYN ONE?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-a">Yes. VORYN ONE is formulated for adults aged 35–60 regardless of gender. The ingredients address universal mechanisms of aging — NAD+ decline, magnesium deficiency, vitamin D insufficiency, and calcium dysregulation — that affect men and women equally. Women in perimenopause and post-menopause may find the D3/K2 combination particularly relevant for bone density maintenance. Consult your physician if pregnant or nursing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="regimen-cta">
+  <div class="cta-left">
+    <h2>Ready to start<br>the <em>ritual?</em></h2>
+    <p>Two capsules. One daily decision. Everything else on this page is context — the protocol itself is that simple. Start today and give it 90 days.</p>
+  </div>
+  <div class="cta-right">
+    <a href="product.html" class="btn-primary">Subscribe & Save — $47.99/mo</a>
+    <a href="product.html" class="btn-secondary">Buy Once — $59.99</a>
+    <p style="font-size:0.75rem;color:var(--gray);text-align:center;margin-top:1rem">30-day money back guarantee · Free shipping · Cancel anytime</p>
+  </div>
+</section>
+
+<!-- FDA -->
+<div class="fda">
+  <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">VORYN</div>
+  <div class="footer-links">
+    <a href="science.html">Science</a>
+    <a href="regimen.html">Regimen</a>
+    <a href="journal.html">Journal</a>
+    <a href="product.html">Product</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+  <div class="footer-copy">© 2025 VORYN. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
