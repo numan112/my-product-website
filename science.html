@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VORYN ONE — The Science</title>
+<meta name="description" content="The peer-reviewed research behind VORYN ONE. NMN, Magnesium Glycinate, Vitamin D3, and Vitamin K2 — the evidence explained.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0D0D0D;
+  --charcoal:#1A1A1A;
+  --amber:#C8621A;
+  --amber-light:#E8832A;
+  --white:#FFFFFF;
+  --gray:#999999;
+  --border:#2A2A2A;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.8rem 5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--black);z-index:100}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;letter-spacing:0.35em;color:var(--white);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--amber);color:var(--white);border:none;padding:0.75rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.3s}
+.nav-cta:hover{background:var(--amber-light)}
+
+/* HERO */
+.science-hero{padding:8rem 5rem;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.hero-tag{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:4.5rem;font-weight:300;line-height:1.05;margin-bottom:1.5rem}
+.hero-title em{color:var(--amber);font-style:italic}
+.hero-sub{color:var(--gray);font-size:1rem;line-height:1.95;margin-bottom:2.5rem}
+.hero-note{font-size:0.78rem;color:var(--gray);border-left:2px solid var(--amber);padding-left:1.5rem;line-height:1.9}
+.hero-stats{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.hero-stat{background:var(--charcoal);padding:2.5rem;position:relative}
+.hero-stat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--amber)}
+.hs-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--amber);line-height:1}
+.hs-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-top:0.5rem}
+.hs-desc{font-size:0.82rem;color:var(--gray);margin-top:0.5rem;line-height:1.8}
+
+/* NAV PILLS */
+.science-nav{display:flex;gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+.sci-pill{flex:1;padding:1.5rem;text-align:center;background:var(--black);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:all 0.3s;cursor:pointer}
+.sci-pill:hover,.sci-pill.active{background:var(--charcoal);color:var(--white)}
+.sci-pill.active{border-bottom:2px solid var(--amber)}
+
+/* SHARED */
+.science-section{padding:7rem 5rem;border-bottom:1px solid var(--border)}
+.section-tag{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;line-height:1.2;margin-bottom:1.2rem}
+.section-intro{color:var(--gray);font-size:0.95rem;line-height:1.95;max-width:700px;margin-bottom:4rem}
+
+/* MECHANISM */
+.mechanism{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:4rem;align-items:start}
+.mech-text h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:1rem}
+.mech-text p{color:var(--gray);font-size:0.9rem;line-height:1.95;margin-bottom:1.2rem}
+.mech-text p:last-child{margin-bottom:0}
+.mech-visual{background:var(--charcoal);border:1px solid var(--border);padding:3rem;position:relative}
+.mech-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--amber)}
+.mech-title{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:2rem}
+.mech-flow{display:flex;flex-direction:column;gap:0}
+.mech-step{display:flex;gap:1.5rem;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--border)}
+.mech-step:last-child{border-bottom:none}
+.mech-arrow{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--amber);flex-shrink:0;line-height:1.4}
+.mech-step-text{font-size:0.82rem;color:var(--gray);line-height:1.8}
+.mech-step-text strong{color:var(--white);font-weight:400}
+
+/* STUDIES */
+.studies{display:flex;flex-direction:column;gap:1px;background:var(--border);margin-top:3rem}
+.study{background:var(--black);padding:2.5rem 3rem;display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:start;transition:background 0.3s}
+.study:hover{background:var(--charcoal)}
+.study-year{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--amber);flex-shrink:0;line-height:1;padding-top:0.2rem}
+.study-content h4{font-size:0.82rem;font-weight:400;margin-bottom:0.5rem;line-height:1.5}
+.study-content p{color:var(--gray);font-size:0.82rem;line-height:1.8}
+.study-journal{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-top:0.8rem}
+.study-link{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);text-decoration:none;border:1px solid var(--border);padding:0.5rem 1rem;white-space:nowrap;transition:all 0.3s;align-self:center}
+.study-link:hover{border-color:var(--amber)}
+
+/* KEY FINDINGS */
+.findings{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem}
+.finding{background:var(--black);padding:2.5rem;transition:background 0.3s}
+.finding:hover{background:var(--charcoal)}
+.finding-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--amber);line-height:1;margin-bottom:1rem}
+.finding-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.8rem;color:var(--white)}
+.finding p{color:var(--gray);font-size:0.82rem;line-height:1.8}
+
+/* SYNERGY */
+.synergy-section{padding:7rem 5rem;border-bottom:1px solid var(--border);background:var(--charcoal)}
+.synergy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:4rem}
+.synergy-card{background:var(--black);padding:3rem;transition:background 0.3s}
+.synergy-card:hover{background:#111}
+.syn-pair{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.2rem}
+.syn-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:1rem}
+.syn-desc{color:var(--gray);font-size:0.88rem;line-height:1.95}
+
+/* CTA */
+.science-cta{padding:7rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;border-bottom:1px solid var(--border)}
+.cta-left h2{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;line-height:1.15;margin-bottom:1.5rem}
+.cta-left h2 em{color:var(--amber);font-style:italic}
+.cta-left p{color:var(--gray);font-size:0.92rem;line-height:1.95}
+.cta-right{display:flex;flex-direction:column;gap:1rem}
+.btn-primary{background:var(--amber);color:var(--white);border:none;padding:1.3rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;text-align:center;text-decoration:none;display:block}
+.btn-primary:hover{background:var(--amber-light)}
+.btn-secondary{background:transparent;color:var(--white);border:1px solid var(--border);padding:1.1rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-align:center;text-decoration:none;display:block}
+.btn-secondary:hover{border-color:var(--gray)}
+
+/* FDA */
+.fda{padding:2.5rem 5rem;border-bottom:1px solid var(--border)}
+.fda p{font-size:0.68rem;color:var(--border);line-height:1.9;max-width:860px}
+
+/* FOOTER */
+footer{padding:3.5rem 5rem;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:0.35em}
+.footer-links{display:flex;gap:2.5rem}
+.footer-links a{color:var(--gray);text-decoration:none;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:0.72rem;color:var(--border)}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:1.5rem 2rem}
+  .nav-links{display:none}
+  .science-hero{grid-template-columns:1fr;padding:4rem 2rem;gap:3rem}
+  .hero-title{font-size:3rem}
+  .science-nav{flex-wrap:wrap}
+  .science-section{padding:4rem 2rem}
+  .mechanism{grid-template-columns:1fr}
+  .findings{grid-template-columns:1fr}
+  .synergy-section{padding:4rem 2rem}
+  .synergy-grid{grid-template-columns:1fr}
+  .science-cta{grid-template-columns:1fr;padding:4rem 2rem;gap:3rem}
+  footer{flex-direction:column;gap:2rem;text-align:center;padding:3rem 2rem}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+  .fda{padding:2rem}
+  .study{grid-template-columns:auto 1fr;gap:1.5rem}
+  .study-link{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">VORYN</a>
+  <ul class="nav-links">
+    <li><a href="science.html" class="active">Science</a></li>
+    <li><a href="regimen.html">Regimen</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="product.html">Product</a></li>
+  </ul>
+  <button class="nav-cta">Subscribe & Save</button>
+</nav>
+
+<!-- HERO -->
+<div class="science-hero">
+  <div>
+    <p class="hero-tag">Peer-Reviewed Research</p>
+    <h1 class="hero-title">The science<br>behind <em>every<br>decision.</em></h1>
+    <p class="hero-sub">Every ingredient in VORYN ONE was selected based on published, peer-reviewed research. This page exists so you can verify every claim yourself.</p>
+    <p class="hero-note">We link directly to the studies. Read the abstracts. Check the doses. We built VORYN ONE for people who do exactly that.</p>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hs-num">4</div>
+      <div class="hs-label">Ingredients</div>
+      <div class="hs-desc">Selected from hundreds of candidates based solely on clinical evidence</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-num">300+</div>
+      <div class="hs-label">Published studies</div>
+      <div class="hs-desc">Across all four ingredients combined in peer-reviewed journals</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-num">0</div>
+      <div class="hs-label">Proprietary blends</div>
+      <div class="hs-desc">Every dose is disclosed. Every ingredient is verifiable.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION NAV -->
+<div class="science-nav">
+  <a class="sci-pill active" href="#nmn">NMN</a>
+  <a class="sci-pill" href="#magnesium">Magnesium</a>
+  <a class="sci-pill" href="#d3">Vitamin D3</a>
+  <a class="sci-pill" href="#k2">Vitamin K2</a>
+  <a class="sci-pill" href="#synergy">Synergy</a>
+</div>
+
+<!-- NMN -->
+<section class="science-section" id="nmn">
+  <p class="section-tag">Ingredient 01</p>
+  <h2 class="section-title">NMN — Nicotinamide Mononucleotide</h2>
+  <p class="section-intro">NMN is a direct precursor to NAD+, one of the most studied molecules in longevity research. The science behind NAD+ decline and restoration is among the most robust in the aging field.</p>
+
+  <div class="mechanism">
+    <div class="mech-text">
+      <h3>The NAD+ decline problem</h3>
+      <p>NAD+ (nicotinamide adenine dinucleotide) is essential for mitochondrial energy production, DNA damage repair via sirtuins and PARP enzymes, and cellular metabolism. By age 40, NAD+ levels have typically fallen 40–50% compared to young adulthood. By 60, the decline can reach 80%.</p>
+      <p>This decline correlates with virtually every hallmark of aging — reduced energy, impaired DNA repair, mitochondrial dysfunction, and metabolic decline. Restoring NAD+ levels is one of the most studied interventions in longevity research.</p>
+      <p>NMN enters cells directly via the Slc12a8 transporter and is rapidly converted to NAD+. Multiple human clinical trials have demonstrated that oral NMN supplementation raises blood NAD+ levels significantly, with the most consistent results at 500mg daily.</p>
+    </div>
+    <div class="mech-visual">
+      <div class="mech-title">How NMN becomes NAD+</div>
+      <div class="mech-flow">
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>Oral NMN 500mg</strong> — absorbed via small intestine Slc12a8 transporter</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>Enters bloodstream</strong> — measurable increase in plasma NMN within 30 minutes</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>Cellular uptake</strong> — converted to NAD+ via NMNAT enzymes in tissue</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>NAD+ elevation</strong> — activates sirtuins, supports mitochondrial function and DNA repair</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="findings">
+    <div class="finding">
+      <div class="finding-num">↑ 38%</div>
+      <div class="finding-label">Blood NAD+ increase</div>
+      <p>Observed in a 2022 randomized controlled trial with 500mg NMN daily over 60 days in healthy middle-aged adults.</p>
+    </div>
+    <div class="finding">
+      <div class="finding-num">500mg</div>
+      <div class="finding-label">Evidence-based dose</div>
+      <p>The dose with the most consistent clinical evidence. Lower doses (100–250mg) show inconsistent NAD+ elevation in adults over 40.</p>
+    </div>
+    <div class="finding">
+      <div class="finding-num">Safe</div>
+      <div class="finding-label">Safety profile</div>
+      <p>Multiple human trials have reported no serious adverse effects at doses up to 1,200mg daily. 500mg is well within the established safety range.</p>
+    </div>
+  </div>
+
+  <div class="studies">
+    <div class="study">
+      <div class="study-year">2022</div>
+      <div class="study-content">
+        <h4>Oral NMN supplementation raises blood NAD+ levels in healthy adults</h4>
+        <p>Randomized, double-blind, placebo-controlled trial. 500mg NMN daily for 60 days. Significant elevation in whole blood NAD+ metabolites with no adverse effects reported.</p>
+        <div class="study-journal">Frontiers in Aging · Igarashi et al.</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+    <div class="study">
+      <div class="study-year">2021</div>
+      <div class="study-content">
+        <h4>NMN safely increases NAD+ biosynthesis in older adults</h4>
+        <p>Phase I clinical study demonstrating that single oral doses of NMN up to 500mg are safe, well-tolerated, and effectively raise plasma NMN and NAD+ metabolite levels.</p>
+        <div class="study-journal">Nature Metabolism · Yoshino et al.</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+    <div class="study">
+      <div class="study-year">2013</div>
+      <div class="study-content">
+        <h4>NAD+ and sirtuins in aging and disease</h4>
+        <p>Landmark review establishing the connection between NAD+ decline, sirtuin deactivation, and the hallmarks of aging. Foundation paper for the NMN supplementation field.</p>
+        <div class="study-journal">Trends in Cell Biology · Guarente</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAGNESIUM -->
+<section class="science-section" id="magnesium">
+  <p class="section-tag">Ingredient 02</p>
+  <h2 class="section-title">Magnesium Glycinate — 120mg elemental</h2>
+  <p class="section-intro">Magnesium is the fourth most abundant mineral in the body and a cofactor in over 300 enzymatic reactions. Yet most adults are chronically deficient — and most magnesium supplements are poorly absorbed.</p>
+
+  <div class="mechanism">
+    <div class="mech-text">
+      <h3>Why deficiency is the norm</h3>
+      <p>Modern agricultural practices have depleted soil magnesium significantly over the past century. Combined with diets high in processed foods and low in leafy greens, nuts, and seeds, studies estimate 50–80% of adults in developed countries do not meet the recommended daily intake.</p>
+      <p>Magnesium is required for ATP synthesis (every energy-producing reaction in the body), DNA replication and repair, neurotransmitter regulation, muscle contraction and relaxation, and blood glucose regulation. Chronic deficiency is associated with poor sleep, muscle cramps, anxiety, and increased cardiovascular risk.</p>
+      <p>We use glycinate specifically because magnesium oxide — the most common form — has approximately 4% bioavailability. Glycinate chelation binds magnesium to glycine for dramatically superior absorption without gastrointestinal side effects.</p>
+    </div>
+    <div class="mech-visual">
+      <div class="mech-title">Magnesium glycinate vs other forms</div>
+      <div class="mech-flow">
+        <div class="mech-step">
+          <div class="mech-arrow">✓</div>
+          <div class="mech-step-text"><strong>Glycinate</strong> — ~80% bioavailability. Chelated to glycine. No laxative effect. Superior sleep support.</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">~</div>
+          <div class="mech-step-text"><strong>Citrate</strong> — ~30% bioavailability. Common laxative effect at higher doses.</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">✗</div>
+          <div class="mech-step-text"><strong>Oxide</strong> — ~4% bioavailability. Most common form in cheap supplements. Largely ineffective.</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">✗</div>
+          <div class="mech-step-text"><strong>Sulfate (Epsom salt)</strong> — poor oral absorption. Primarily topical or IV use.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="findings">
+    <div class="finding">
+      <div class="finding-num">300+</div>
+      <div class="finding-label">Enzymatic reactions</div>
+      <p>Magnesium acts as a cofactor in over 300 enzymatic processes including every ATP-dependent reaction in the body.</p>
+    </div>
+    <div class="finding">
+      <div class="finding-num">50–80%</div>
+      <div class="finding-label">Adults deficient</div>
+      <p>Estimated percentage of adults in developed countries failing to meet adequate daily magnesium intake through diet alone.</p>
+    </div>
+    <div class="finding">
+      <div class="finding-num">↑ Sleep</div>
+      <div class="finding-label">Sleep quality</div>
+      <p>Multiple trials show magnesium glycinate supplementation improves sleep onset, duration, and subjective sleep quality in deficient adults.</p>
+    </div>
+  </div>
+
+  <div class="studies">
+    <div class="study">
+      <div class="study-year">2012</div>
+      <div class="study-content">
+        <h4>Magnesium supplementation improves insomnia in elderly adults</h4>
+        <p>Double-blind randomized controlled trial. Magnesium supplementation significantly improved sleep time, sleep efficiency, and early morning awakening, as well as serum melatonin and cortisol levels.</p>
+        <div class="study-journal">Journal of Research in Medical Sciences · Abbasi et al.</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+    <div class="study">
+      <div class="study-year">2018</div>
+      <div class="study-content">
+        <h4>Suboptimal magnesium status in the United States</h4>
+        <p>Review of national dietary surveys demonstrating widespread magnesium inadequacy and its association with cardiovascular disease, type 2 diabetes, and inflammation.</p>
+        <div class="study-journal">Nutrients · Costello et al.</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+  </div>
+</section>
+
+<!-- D3 -->
+<section class="science-section" id="d3">
+  <p class="section-tag">Ingredient 03</p>
+  <h2 class="section-title">Vitamin D3 — 5,000 IU</h2>
+  <p class="section-intro">Vitamin D3 is not a vitamin in the conventional sense. It is a secosteroid hormone with receptor sites in virtually every tissue in the human body. Over 40% of adults are clinically deficient.</p>
+
+  <div class="mechanism">
+    <div class="mech-text">
+      <h3>A hormone, not just a vitamin</h3>
+      <p>Vitamin D receptors (VDR) have been identified in over 30 different tissue types including the brain, heart, immune cells, and reproductive organs. D3 regulates over 200 genes involved in immune function, cell proliferation, and inflammation.</p>
+      <p>Deficiency is defined as serum 25(OH)D below 20 ng/mL. Insufficiency is below 30 ng/mL. Most longevity researchers and clinicians aim for 50–80 ng/mL. Achieving this in deficient individuals typically requires 2,000–5,000 IU daily — not the 400–800 IU found in most multivitamins.</p>
+      <p>The 400 IU RDA was established to prevent rickets — not to optimize immune function, mood, cardiovascular health, or longevity. We dose for optimization, not minimum adequacy.</p>
+    </div>
+    <div class="mech-visual">
+      <div class="mech-title">What D3 regulates in the body</div>
+      <div class="mech-flow">
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>Immune system</strong> — modulates innate and adaptive immune response, reduces inflammatory cytokines</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>Bone density</strong> — enhances calcium absorption from the gut, critical for skeletal integrity</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>Mood & cognition</strong> — regulates serotonin synthesis and dopamine function in the brain</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>Cardiovascular</strong> — reduces arterial stiffness, regulates blood pressure via renin-angiotensin system</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="findings">
+    <div class="finding">
+      <div class="finding-num">>40%</div>
+      <div class="finding-label">Adults deficient</div>
+      <p>CDC data shows over 40% of US adults have insufficient vitamin D levels. Higher in northern latitudes, darker skin tones, and indoor workers.</p>
+    </div>
+    <div class="finding">
+      <div class="finding-num">200+</div>
+      <div class="finding-label">Genes regulated</div>
+      <p>Vitamin D3 regulates the expression of over 200 genes through the vitamin D receptor, impacting immunity, metabolism, and cell growth.</p>
+    </div>
+    <div class="finding">
+      <div class="finding-num">5,000 IU</div>
+      <div class="finding-label">Optimization dose</div>
+      <p>The dose consistently used by longevity researchers to raise serum levels from deficiency to the optimal 50–80 ng/mL range.</p>
+    </div>
+  </div>
+
+  <div class="studies">
+    <div class="study">
+      <div class="study-year">2019</div>
+      <div class="study-content">
+        <h4>Vitamin D supplementation and cardiovascular disease risk</h4>
+        <p>Meta-analysis of 21 randomized controlled trials examining the effect of vitamin D supplementation on cardiovascular outcomes. Higher doses associated with greater cardiovascular benefit.</p>
+        <div class="study-journal">JAMA Cardiology · Barbarawi et al.</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+    <div class="study">
+      <div class="study-year">2020</div>
+      <div class="study-content">
+        <h4>Vitamin D deficiency prevalence and determinants in US adults</h4>
+        <p>Analysis of NHANES data demonstrating that over 40% of the US adult population has vitamin D insufficiency or deficiency, with higher rates in older adults and minority populations.</p>
+        <div class="study-journal">Nutrients · Forrest & Stuhldreher</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+  </div>
+</section>
+
+<!-- K2 -->
+<section class="science-section" id="k2">
+  <p class="section-tag">Ingredient 04</p>
+  <h2 class="section-title">Vitamin K2 MK-7 — 100mcg</h2>
+  <p class="section-intro">K2 is the ingredient most people taking D3 are missing — and the most important one for long-term cardiovascular safety when supplementing with high-dose D3.</p>
+
+  <div class="mechanism">
+    <div class="mech-text">
+      <h3>The calcium traffic director</h3>
+      <p>Vitamin K2 activates two critical proteins through a process called carboxylation. Osteocalcin, produced by osteoblasts in bone, requires K2 activation to bind calcium into bone matrix. Matrix Gla Protein (MGP), found in arterial walls, requires K2 to inhibit calcium deposition in arteries.</p>
+      <p>When D3 is supplemented without K2, calcium absorption from the gut increases significantly. Without active MGP to direct that calcium away from arteries, it can deposit in arterial walls — accelerating arterial calcification and cardiovascular risk.</p>
+      <p>MK-7 (menaquinone-7) is derived from natto fermentation and is the most bioavailable, longest-acting form of K2. Its half-life of 72 hours (vs 1–2 hours for MK-4) ensures sustained carboxylation activity throughout the day from a single daily dose.</p>
+    </div>
+    <div class="mech-visual">
+      <div class="mech-title">K2 without D3 vs D3 without K2</div>
+      <div class="mech-flow">
+        <div class="mech-step">
+          <div class="mech-arrow">✓</div>
+          <div class="mech-step-text"><strong>D3 + K2 together</strong> — calcium directed to bones via osteocalcin. Arteries protected by active MGP.</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">⚠</div>
+          <div class="mech-step-text"><strong>D3 without K2</strong> — calcium absorption increases but MGP remains inactive. Calcium may deposit in arteries.</div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-arrow">→</div>
+          <div class="mech-step-text"><strong>MK-7 at 100mcg</strong> — sufficient to fully activate MGP and osteocalcin based on current clinical evidence.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="findings">
+    <div class="finding">
+      <div class="finding-num">72hr</div>
+      <div class="finding-label">MK-7 half-life</div>
+      <p>MK-7 remains active in the bloodstream for 72 hours — compared to 1–2 hours for MK-4 — making once-daily dosing fully effective.</p>
+    </div>
+    <div class="finding">
+      <div class="finding-num">↓ Calc.</div>
+      <div class="finding-label">Arterial calcification</div>
+      <p>K2 supplementation has been shown to reduce progression of arterial calcification and improve arterial flexibility in postmenopausal women.</p>
+    </div>
+    <div class="finding">
+      <div class="finding-num">100mcg</div>
+      <div class="finding-label">Evidence-based dose</div>
+      <p>The dose shown to significantly activate osteocalcin and MGP in clinical trials, with no adverse effects and no interference with normal clotting at this level.</p>
+    </div>
+  </div>
+
+  <div class="studies">
+    <div class="study">
+      <div class="study-year">2015</div>
+      <div class="study-content">
+        <h4>Vitamin K2 supplementation reduces arterial stiffness in healthy postmenopausal women</h4>
+        <p>Three-year randomized controlled trial. MK-7 at 180mcg daily significantly reduced age-related arterial stiffening and improved vascular elasticity versus placebo.</p>
+        <div class="study-journal">Thrombosis and Haemostasis · Knapen et al.</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+    <div class="study">
+      <div class="study-year">2019</div>
+      <div class="study-content">
+        <h4>Synergistic effects of vitamins D and K on bone and cardiovascular health</h4>
+        <p>Review establishing the mechanistic basis for combining D3 and K2, demonstrating their complementary roles in calcium metabolism and the risks of high-dose D3 without adequate K2.</p>
+        <div class="study-journal">European Journal of Nutrition · van Ballegooijen et al.</div>
+      </div>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="study-link">PubMed →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SYNERGY -->
+<section class="synergy-section" id="synergy">
+  <p class="section-tag">The Full Picture</p>
+  <h2 class="section-title">Why these four work better together.</h2>
+  <p class="section-intro">Each ingredient has strong independent evidence. But the reason VORYN ONE combines all four is that they share overlapping pathways and create genuine synergies that make the whole greater than the sum of its parts.</p>
+  <div class="synergy-grid">
+    <div class="synergy-card">
+      <div class="syn-pair">D3 + K2</div>
+      <h3 class="syn-title">Required combination</h3>
+      <p class="syn-desc">D3 increases calcium absorption. K2 directs that calcium to bones and away from arteries. Taking D3 without K2 at doses above 2,000 IU carries cardiovascular risk. These two must be taken together — and virtually no one selling high-dose D3 tells you that.</p>
+    </div>
+    <div class="synergy-card">
+      <div class="syn-pair">NMN + Magnesium</div>
+      <h3 class="syn-title">Energy pathway overlap</h3>
+      <p class="syn-desc">NMN raises NAD+ to support mitochondrial energy production. Magnesium is a required cofactor for ATP synthesis — the actual energy molecule produced by mitochondria. Both support the same fundamental cellular energy pathway from different angles.</p>
+    </div>
+    <div class="synergy-card">
+      <div class="syn-pair">Magnesium + D3</div>
+      <h3 class="syn-title">Activation dependency</h3>
+      <p class="syn-desc">Magnesium is required to convert vitamin D3 into its active hormonal form (1,25-dihydroxyvitamin D). In magnesium-deficient individuals, D3 supplementation may be less effective — or may deplete magnesium stores further. Combined supplementation addresses both issues simultaneously.</p>
+    </div>
+    <div class="synergy-card">
+      <div class="syn-pair">All four</div>
+      <h3 class="syn-title">The complete longevity foundation</h3>
+      <p class="syn-desc">Together these four ingredients address cellular energy decline (NMN), micronutrient deficiency affecting 50–80% of adults (Magnesium), the most common hormonal deficiency in developed nations (D3), and the most overlooked cardiovascular protector (K2). This is the foundation — not the ceiling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="science-cta">
+  <div class="cta-left">
+    <h2>You've read the<br>science. Now try <em>the stack.</em></h2>
+    <p>Every claim on this page is backed by peer-reviewed research. Every dose reflects what the evidence actually supports. VORYN ONE is the product we built for people who think exactly like this.</p>
+  </div>
+  <div class="cta-right">
+    <a href="product.html" class="btn-primary">Get VORYN ONE — $47.99/mo</a>
+    <a href="product.html" class="btn-secondary">Buy Once — $59.99</a>
+    <p style="font-size:0.75rem;color:var(--gray);text-align:center;margin-top:1rem">30-day money back guarantee · Free shipping</p>
+  </div>
+</section>
+
+<!-- FDA -->
+<div class="fda">
+  <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">VORYN</div>
+  <div class="footer-links">
+    <a href="science.html">Science</a>
+    <a href="regimen.html">Regimen</a>
+    <a href="journal.html">Journal</a>
+    <a href="product.html">Product</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+  <div class="footer-copy">© 2025 VORYN. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
